@@ -1,1 +1,1 @@
-# gallery-picker
+# Gallery-Picker
