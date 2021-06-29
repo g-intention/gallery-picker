@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/toolbar_card_style"
+            android:id="@+id/toolbar_card"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_card_height"
+            android:layout_alignParentTop="true">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="@dimen/lottie_thumbnail_size"
+            android:layout_height="@dimen/lottie_thumbnail_size"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/girl_tapping_phone"
+            android:id="@+id/GirlTappingPhone"/>
+
+        <!-- android:numColumns=2 is the number of columns for Grid View
+              android:horizontalSpacing is the space between horizontal
+              grid items.-->
+        <GridView
+            android:id="@+id/idMediaPickerGV"
+            android:layout_width="@dimen/grid_width"
+            android:layout_height="@dimen/grid_height"
+            android:horizontalSpacing="@dimen/grid_horizontal_spacing"
+            android:verticalSpacing="@dimen/grid_vertical_spacing"
+            android:numColumns="@integer/num_columns"
+            android:layout_below="@+id/GirlTappingPhone"
+            android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
+
+</RelativeLayout>

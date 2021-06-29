@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="file_duration_margin">6dp</dimen>
+    <dimen name="file_duration_padding">4dp</dimen>
+    <dimen name="file_duration_bg_radius">4dp</dimen>
+    <dimen name="file_name_text_size">10sp</dimen>
+    <dimen name="file_name_padding">2dp</dimen>
+    <dimen name="file_selected_icon_size">24dp</dimen>
+    <dimen name="file_selected_margin">6dp</dimen>
+    <dimen name="file_selected_margin_end">12dp</dimen>
+    <dimen name="file_selected_padding">4dp</dimen>
+    <dimen name="file_open_camera_padding">15dp</dimen>
+    <dimen name="media_filepicker_label_size">12sp</dimen>
+    <dimen name="card_shadow">2dp</dimen>
+    <dimen name="toolbar_card_height">45dp</dimen>
+</resources>

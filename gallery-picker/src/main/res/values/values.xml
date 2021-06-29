@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorAccent">#d00000</color>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#d00000</color>
+    <color name="open_camera_bg">#ffffff</color>
+    <dimen name="grid_spacing">1dp</dimen>
+    <string name="app_name">gogomet_gallery_picker</string>
+    <string name="done">Done</string>
+    <string name="image_thumbnail">Image Thumbnail</string>
+    <string name="video_thumbnail">Video Thumbnail</string>
+    <string name="audio_thumbnail">Audio Thumbnail</string>
+    <string name="file_thumbnail">File Thumbnail</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="permission_not_given">Permission not given</string>
+    <string name="selection_count">%1$d/%2$d</string>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionModeOverlay">true</item>
+    </style>
+</resources>

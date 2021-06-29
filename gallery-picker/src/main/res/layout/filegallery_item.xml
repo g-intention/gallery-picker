@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView style="@style/gallery_item_card_design"
+    android:layout_width="match_parent"
+    android:layout_height="131dp"
+    android:id="@+id/gallery_item_card"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <!--         IMAGE THUMBNAIL-->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/image_item_thumbnail"
+                android:layout_width="match_parent"
+                android:scaleType="centerCrop"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/image_thumbnail"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_camera" />
+
+            <!--         VIDEO THUMBNAIL-->
+            <com.google.android.exoplayer2.ui.PlayerView
+                android:id="@+id/video_item_thumbnail"
+                android:layout_width="match_parent"
+                android:scaleType="centerCrop"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/video_thumbnail"
+                android:visibility="gone"
+                app:resize_mode="fill" />
+
+
+            <!--         AUDIO THUMBNAIL-->
+            <LinearLayout
+                android:id="@+id/container_audio_item_thumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/white_bg"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:weightSum="10">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/audio_item_thumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:scaleType="centerCrop"
+                    android:layout_weight="8"
+                    android:contentDescription="@string/audio_thumbnail" />
+
+                <!--            FILE TITLE-->
+                <TextView
+                    android:id="@+id/audio_file_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="2"
+                    android:background="@drawable/file_name_bg"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:padding="@dimen/file_name_padding"
+                    android:text="@string/testing"
+                    android:textColor="@color/second_text_color"
+                    android:textSize="@dimen/file_name_text_size"
+                    android:visibility="visible" />
+
+
+            </LinearLayout>
+
+            <!--         PDF THUMBNAIL-->
+            <LinearLayout
+                android:id="@+id/container_file_item_thumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/white_bg"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:weightSum="10">
+
+                <!--         FILE THUMBNAIL-->
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/file_item_thumbnail"
+                    android:layout_width="match_parent"
+                    android:scaleType="centerCrop"
+                    android:layout_height="0dp"
+                    android:layout_weight="8"
+                    android:contentDescription="@string/file_thumbnail" />
+
+
+                <!--            FILE TITLE-->
+                <TextView
+                    android:id="@+id/pdf_file_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="2"
+                    android:background="@drawable/file_name_bg"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:padding="@dimen/file_name_padding"
+                    android:text="@string/testing"
+                    android:textColor="@color/second_text_color"
+                    android:textSize="@dimen/file_name_text_size"
+                    android:visibility="visible" />
+
+
+            </LinearLayout>
+
+
+            <!--            FILE DURATION-->
+            <TextView
+                android:id="@+id/file_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_margin="@dimen/file_duration_margin"
+                android:background="@drawable/file_duration_bg"
+                android:gravity="center"
+                android:padding="@dimen/file_duration_padding"
+                android:textColor="@color/white_color"
+                android:textSize="12sp"
+                android:visibility="visible"
+                tool:text="02:10" />
+
+            <!--            SELECTED ICON-->
+            <LinearLayout
+                android:id="@+id/file_selected"
+                android:layout_width="@dimen/file_selected_icon_size"
+                android:layout_height="@dimen/file_selected_icon_size"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/file_selected_margin"
+                android:layout_marginTop="@dimen/file_selected_margin"
+                android:layout_marginEnd="@dimen/file_selected_margin_end"
+                android:layout_marginBottom="@dimen/file_selected_margin"
+                android:background="@drawable/file_selected_bg"
+                android:gravity="center"
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/file_selected_padding"
+                    app:srcCompat="@drawable/ic_selected" />
+
+            </LinearLayout>
+
+
+            <!--        FILE CAMERA-->
+            <RelativeLayout
+                android:id="@+id/file_open_camera"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/open_camera_bg"
+                android:contentDescription="@string/open_camera"
+                android:padding="@dimen/file_open_camera_padding"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:weightSum="10">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="8"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/take_selfie" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/lato_bold"
+                        android:gravity="center"
+                        android:text="@string/media_label"
+                        android:textColor="@color/second_text_color"
+                        android:textSize="@dimen/media_filepicker_label_size" />
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+
+            <!--        FILE CAMERA TO TAKE PHOTO YA VIDEO-->
+            <RelativeLayout
+                android:id="@+id/file_open_video_camera"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/open_camera_bg"
+                android:contentDescription="@string/open_camera"
+                android:padding="@dimen/file_open_camera_padding"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:weightSum="10">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="8"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/take_selfie" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/lato_bold"
+                        android:gravity="center"
+                        android:text="@string/media_label"
+                        android:textColor="@color/second_text_color"
+                        android:textSize="@dimen/media_filepicker_label_size" />
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+

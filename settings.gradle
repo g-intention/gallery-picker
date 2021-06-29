@@ -1,0 +1,3 @@
+rootProject.name = "Gallery Picker"
+include ':app'
+include ':gallery-picker'

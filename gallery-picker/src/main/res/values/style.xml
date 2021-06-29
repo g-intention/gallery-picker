@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    GALLERY ITEM DESIGN-->
+    <style name="gallery_item_card_design" parent="Widget.MaterialComponents.CardView">
+        <item name="cardElevation">@dimen/card_shadow</item>
+        <item name="android:translationZ">@dimen/card_shadow</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="cardCornerRadius">4dp</item>
+    </style>
+
+<!--    Design tool bar card-->
+    <style name="toolbar_card_style" parent="Widget.MaterialComponents.CardView">
+
+    </style>
+
+</resources>
