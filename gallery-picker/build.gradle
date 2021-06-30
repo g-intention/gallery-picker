@@ -1,13 +1,13 @@
 plugins {
     id "com.android.library"
 }
-apply plugin: 'maven-publish' // Apply this plugin at the top of your library build.gradle
+apply plugin: 'maven-publish' // -- Apply this plugin at the top of your library build.gradle
 
 def githubProperties = new Properties()
 githubProperties.load(new FileInputStream(rootProject.file("github.properties")))
 
 def getVersionName = { ->
-    return "v0.0.1"  // Replace with version Name
+    return "v0.0.1"  // -- Replace with version Name
 }
 
 def getArtificatId = { ->
@@ -80,7 +80,7 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
     implementation 'com.airbnb.android:lottie:3.7.0'
-    // Dependency for exoplayer
+    // -- Dependency for exoplayer
     implementation 'com.google.android.exoplayer:exoplayer:2.14.1'
     implementation 'com.google.android.exoplayer:exoplayer-core:2.14.1'
     implementation 'com.google.android.exoplayer:exoplayer-dash:2.14.1'

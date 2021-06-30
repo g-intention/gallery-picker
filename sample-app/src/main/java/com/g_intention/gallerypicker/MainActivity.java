@@ -27,23 +27,22 @@ import com.gallery_picker.model.MediaFile;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    // Initialize Request Code
+
+   // -- Initialize Request Code
     private final int IMAGE_REQUEST_CODE = 101;
     private final int VIDEO_REQUEST_CODE = 102;
     private final int AUDIO_REQUEST_CODE = 103;
     private final int PDF_REQUEST_CODE = 104;
 
-    // Declare variable
-    Button image_picker_button, video_picker_button, audio_picker_button, pdf_picker_button;
+   // -- Declare variable
     GridView idMediaPickerGV;
 
-    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Reference
+       // -- Reference
         idMediaPickerGV = findViewById(R.id.idMediaPickerGV);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -83,19 +82,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    // To implementing for picking image
+   // -- To implementing for picking image
     private void PickImage() {
-        // Check permissions
+       // -- Check permissions
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED) {
-            // When permissions are not granted
-            // Request permission
+           // -- When permissions are not granted
+           // -- Request permission
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, 1);
 
         } else {
-            // -- When permissions granted
-            // -- Create image picker method
+           // -- When permissions granted
+           // -- Create image picker method
             mImagePicker();
 
         }
@@ -104,10 +103,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void mImagePicker() {
 
-        // -- Let's pick image
-        // -- Initialize intent
+       // -- Let's pick image
+       // -- Initialize intent
         Intent intent = new Intent(this, FilePickerActivity.class);
-        // -- Put extra
+       // -- Put extra
         intent.putExtra(FilePickerActivity.CONFIGS, new Configurations.Builder()
                 .setCheckPermission(true)
                 .setShowVideos(false)
@@ -119,26 +118,26 @@ public class MainActivity extends AppCompatActivity {
                 .setSkipZeroSizeFiles(true)
                 .setPortraitSpanCount(3)
                 .build());
-        // Start activity result
+       // -- Start activity result
         startActivityForResult(intent, IMAGE_REQUEST_CODE);
 
 
     }
 
-    // To implementing for picking image
+   // -- To implementing for picking image
     private void PickVideo() {
 
-        // Check permissions
+       // -- Check permissions
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED) {
-            // When permissions are not granted
-            // Request permission
+           // -- When permissions are not granted
+           // -- Request permission
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, 2);
 
         } else {
-            // When permissions granted
-            // Create image picker method
+           // -- When permissions granted
+           // -- Create image picker method
             mVideoPicker();
 
         }
@@ -147,10 +146,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void mVideoPicker() {
 
-        // Let's pick video
-        // Initialize intent
+       // -- Let's pick video
+       // -- Initialize intent
         Intent intent = new Intent(this, FilePickerActivity.class);
-        // Put extra
+       // -- Put extra
         intent.putExtra(FilePickerActivity.CONFIGS, new Configurations.Builder()
                 .setCheckPermission(true)
                 .setShowVideos(true)
@@ -162,18 +161,18 @@ public class MainActivity extends AppCompatActivity {
                 .setSkipZeroSizeFiles(true)
                 .setPortraitSpanCount(3)
                 .build());
-        // Start activity result
+       // -- Start activity result
         startActivityForResult(intent, VIDEO_REQUEST_CODE);
 
 
     }
 
-    // To implementing for picking audio
+   // -- To implementing for picking audio
     private void PickAudio() {
-        // -- Let's pick audio
-        // -- Initialize intent
+       // -- Let's pick audio
+       // -- Initialize intent
         Intent intent = new Intent(this, FilePickerActivity.class);
-        // Put extra
+       // -- Put extra
         intent.putExtra(FilePickerActivity.CONFIGS, new Configurations.Builder()
                 .setCheckPermission(true)
                 .setShowVideos(false)
@@ -185,17 +184,17 @@ public class MainActivity extends AppCompatActivity {
                 .setSkipZeroSizeFiles(true)
                 .setPortraitSpanCount(3)
                 .build());
-        // Start activity result
+       // -- Start activity result
         startActivityForResult(intent, AUDIO_REQUEST_CODE);
 
     }
 
-    // To implementing for picking PDF
+   // -- To implementing for picking PDF
     private void PickPDF() {
-        // -- Let's pick PDF
-        // -- Initialize intent
+       // -- Let's pick PDF
+       // -- Initialize intent
         Intent intent = new Intent(this, FilePickerActivity.class);
-        // Put extra
+       // -- Put extra
         intent.putExtra(FilePickerActivity.CONFIGS, new Configurations.Builder()
                 .setCheckPermission(true)
                 .setShowVideos(false)
@@ -207,7 +206,7 @@ public class MainActivity extends AppCompatActivity {
                 .setSkipZeroSizeFiles(true)
                 .setPortraitSpanCount(3)
                 .build());
-        // Start activity result
+       // -- Start activity result
         startActivityForResult(intent, PDF_REQUEST_CODE);
 
     }
@@ -216,19 +215,19 @@ public class MainActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if ((grantResults.length > 0) && (grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
-            // When permissions granted
-            // Check conditions
+           // -- When permissions granted
+           // -- Check conditions
             if (requestCode == 1) {
-                // When requestCode is 1
-                // Call mImagePicker Method
+               // -- When requestCode is 1
+               // -- Call mImagePicker Method
                 mImagePicker();
             } else {
-                // When requestCode is 2
+               // -- When requestCode is 2
                 mVideoPicker();
             }
         } else {
-            // When permission is denied
-            // Show Toast message
+           // -- When permission is denied
+           // -- Show Toast message
             Toast.makeText(this, "Please allow permission", Toast.LENGTH_SHORT).show();
         }
 
@@ -238,16 +237,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        // Check conditions
+       // -- Check conditions
         if (requestCode == RESULT_OK && data != null) {
-            // When resultCode is OM and data is not equal to null
-            // Initialize Array List
+           // -- When resultCode is OM and data is not equal to null
+           // -- Initialize Array List
             ArrayList<MediaFile> mMediaFiles = data.getParcelableArrayListExtra(FilePickerActivity.MEDIA_FILES);
 
-            // Get Size of selected media data
+           // -- Get Size of selected media data
             String mSize = String.valueOf(mMediaFiles.size());
 
-            // Check conditions
+           // -- Check conditions
             switch (requestCode) {
                 case IMAGE_REQUEST_CODE:
                     String img_message = "You have selected " + mSize + " Images";
@@ -278,7 +277,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    // Show Simple Toast Message
+   // -- Show Simple Toast Message
     private void ShowToast(String message) {
         Toast.makeText(this, "Message: " + message, Toast.LENGTH_SHORT).show();
     }
