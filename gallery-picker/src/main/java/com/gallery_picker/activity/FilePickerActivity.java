@@ -50,7 +50,7 @@ public class FilePickerActivity extends AppCompatActivity implements MultiSelect
     private static final int REQUEST_CAMERA_PERMISSION_FOR_VIDEO = 3;
     private static final int REQUEST_DOCUMENT = 4;
     private Configurations configs;
-    private ArrayList<MediaFile> mediaFiles = new ArrayList<>();
+    private final ArrayList<MediaFile> mediaFiles = new ArrayList<>();
     private FileGalleryAdapter fileGalleryAdapter;
     private int maxCount;
 
@@ -86,28 +86,27 @@ public class FilePickerActivity extends AppCompatActivity implements MultiSelect
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-       int spanCount;
+        int spanCount;
         if (getResources().getConfiguration().orientation
                 == Configuration.ORIENTATION_LANDSCAPE) {
             spanCount = configs.getLandscapeSpanCount();
-        }
-        else {
+        } else {
             spanCount = configs.getPortraitSpanCount();
         }
 
-        // Let's write algorithm to dynamically set height of the gallery_item_card
-        //  1-:) First get device screen width & height
-        // 2-:) Write some logic to set  dynamically set size of the gallery_item_card
+        // --Let's write algorithm to dynamically set height of the gallery_item_card
+        // -- 1-:) First get device screen width & height
+        // --2-:) Write some logic to set  dynamically set size of the gallery_item_card
         Display display = getWindowManager().getDefaultDisplay();
-        DisplayMetrics outMetrics = new DisplayMetrics ();
+        DisplayMetrics outMetrics = new DisplayMetrics();
         display.getMetrics(outMetrics);
 
-     // --  float pxHeight = outMetrics.heightPixels;
-        float pxWidth  = outMetrics.widthPixels;
+        // --  float pxHeight = outMetrics.heightPixels;
+        float pxWidth = outMetrics.widthPixels;
 
         // -- We need to divide by spanCount
         float divideWidth = pxWidth / spanCount;
-        int getCardHeight = (int) Math.round(divideWidth);
+        int getCardHeight = Math.round(divideWidth);
 
         int imageSize = configs.getImageSize();
         if (imageSize <= 0) {
